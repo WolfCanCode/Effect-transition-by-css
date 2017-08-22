@@ -5,17 +5,20 @@
         Hover test Wolfhub
     </title>
     <style>
-        
         .container {
             width: 100% !important;
-            height: 600px !important;
+            height: 100% !important;
             background: #eee;
         }
 
+        .list-item {
+            height: 84%;
+        }
+
         .item-folder {
-            width: 222px;
+            width: 18%;
             height: 252px;
-            margin: 15px;
+            margin: 1%;
             cursor: pointer;
             overflow: hidden;
             float: left;
@@ -36,9 +39,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             transition: all 0.3s;
         }
-        .item-folder:hover a
-        {
-            color:white;
+
+        .item-folder:hover a {
+            color: white;
             transition: 0.3s;
         }
 
@@ -49,16 +52,16 @@
             transition: all 0.6s;
         }
 
-        .item-folder h3 {
+        .item-folder h2 {
             font-size: 32px !important;
             font-weight: bolder;
         }
 
 
         .item {
-            width: 222px;
+            width: 18%;
             height: 252px;
-            margin: 15px;
+            margin: 1%;
             cursor: pointer;
             overflow: hidden;
             float: left;
@@ -90,20 +93,20 @@
         }
 
         .item button {
-            width: 100%;
-            margin-top: 15px;
-            height: 50px;
-            display: none;
+            width: 100% !important;
+            margin-top: 15px !important;
+            height: 50px !important;
+            display: none !important;
             transition: all 0.3s;
         }
 
 
-        .item h4 {
+        .item h2 {
             transition: all 0.5s;
             color: #424242;
         }
 
-        .item:hover h4 {
+        .item:hover h2 {
             font-size: 24px;
             color: white;
             transition: all 0.3s;
@@ -115,7 +118,7 @@
         }
 
         .item:hover button {
-            display: block;
+            display: block !important;
             transition: all 1.7 s;
         }
 
@@ -135,119 +138,191 @@
             height: 40px;
             transition: all 0.5s;
         }
-    </style>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+        .search {
+            padding-top: 1%;
+            width: 100%;
+            height: 10%;
+            text-align: center;
+        }
+
+        .footer {
+            height: 6%;
+            background: #E0E0E0;
+            text-align: center;
+        }
+
+        .footer h3 {
+            padding-top: 15px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/icon.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script>
+        function modalTest() {
+            $('.ui.basic.modal').modal('show');
+        }
+
+        function download() {
+            $(".teal").addClass("loading");
+            setTimeout(function () {
+                $(".teal").removeClass("loading");
+            }, 1000);
+            if (event.stopPropagation) {
+                event.stopPropagation();
+            } else {
+                event.cancelBubble = true;
+            }
+        }
+    </script>
 </head>
 
 <body>
     <div class="container">
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                <h4>Tên item</h4>
-                <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                        <i class="download icon right"></i>
-                    </button>            
-                    </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                    <h4>Tên item 1 </h4>
-                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                            <i class="download icon right"></i>
-                        </button>            
-                        </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                    <h4>Tên item 2</h4>
-                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                            <i class="download icon right"></i>
-                        </button>            
-                        </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                        <h4>Tên item 3 </h4>
-                        <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                        <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                        <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                        <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                                <i class="download icon right"></i>
-                            </button>            
-                            </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                    <h4>Tên item 4</h4>
-                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                            <i class="download icon right"></i>
-                        </button>            
-                        </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                            <h4>Tên item 5</h4>
-                            <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                            <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                            <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                            <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                                    <i class="download icon right"></i>
-                                </button>            
-                                </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                    <h4>Tên item 6</h4>
-                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                            <i class="download icon right"></i>
-                        </button>            
-                        </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                                <h4>Tên item 7</h4>
-                                <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                                <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                                <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                                <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                                        <i class="download icon right"></i>
-                                    </button>            
-                                    </a>
-        </div>
-        <div class="item">
-            <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
-                    <h4>Tên item 8</h4>
-                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
-                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
-                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
-                    <button class="btn waves-effect waves-light" type="submit" name="action" >Download
-                            <i class="download icon right"></i>
-                        </button>            
-                        </a>
+        <div class="search">
+            <div class="ui icon input">
+                <input type="text" placeholder="Search...">
+                <i class="inverted circular search link icon"></i>
+            </div>
         </div>
         <div class="item-folder">
             <a href="#"><img src="http://www.iconsdb.com/icons/preview/orange/folder-xxl.png" alt="">
-                                    <h3>Folder</h3>
-           
-                                        </a>
+                                        <h2>Chứng từ</h2>
+               
+                                            </a>
+        </div>
+        <div class="list-item">
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="" >
+                <h2>Tên item</h2>
+                <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                        <i class="download icon right"></i>
+                    </button>            
+                    </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                    <h2>Tên item 1 </h2>
+                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                    <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                            <i class="download icon right"></i>
+                        </button>            
+                        </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                    <h2>Tên item 2</h2>
+                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                    <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                            <i class="download icon right"></i>
+                        </button>            
+                        </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                        <h2>Tên item 3 </h2>
+                        <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                        <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                        <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                        <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                                <i class="download icon right"></i>
+                            </button>            
+                            </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                    <h2>Tên item 4</h2>
+                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                    <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                            <i class="download icon right"></i>
+                        </button>            
+                        </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                            <h2>Tên item 5</h2>
+                            <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                            <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                            <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                            <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                                    <i class="download icon right"></i>
+                                </button>            
+                                </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                    <h2>Tên item 6</h2>
+                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                    <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                            <i class="download icon right"></i>
+                        </button>            
+                        </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                                <h2>Tên item 7</h2>
+                                <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                                <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                                <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                                <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                                        <i class="download icon right"></i>
+                                    </button>            
+                                    </a>
+            </div>
+            <div class="item" onclick="modalTest()">
+                <a href="#"><img src="https://image.flaticon.com/icons/svg/28/28863.svg" alt="">
+                    <h2>Tên item 8</h2>
+                    <span><strong>Người đăng: Lê Ngọc Trường</strong></span>
+                    <span><strong>Ngày đăng: 21-8-2017</strong></span>                
+                    <span><strong>Hiệu lực: 22-8-2017</strong></span>
+                    <button class="ui teal button bottom attached" type="submit" name="action" onclick="download()">Download
+                            <i class="download icon right"></i>
+                        </button>            
+                        </a>
+            </div>
+
+        </div>
+        <div class="footer">
+            <h3>Designed and hardcode by
+                <div class="ui red horizontal label" style="font-size:17px">Ngọc Trường</div>
+                , Wolfhub Solutions</h3>
+        </div>
+
+        <div class="ui basic modal">
+            <div class="ui icon header">
+                <i class="archive icon"></i>
+                <h2>Item 1</h2>
+            </div>
+            <div class="content">
+                <h2>Người đăng: ...</h2>
+                <h2>Ngày đăng: ...</h2>
+                <h2>Hiệu lực: ...</h2>
+                <h2>Nội dung: .............................................</h2>
+
+            </div>
+            <div class="actions">
+                <div class="ui teal button inverted" onclick="download()">
+                    <i class="checkmark icon"></i> Download
+                </div>
+
+                <div class="ui green ok button">
+                    <i class="checkmark icon"></i> OK
+                </div>
+            </div>
         </div>
 
     </div>
