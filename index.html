@@ -144,9 +144,9 @@
             transition: all 0.5s;
         }
 
-        .search {
+        .search-div {
             padding-top: 1%;
-            margin-bottom:1%;
+            margin-bottom: 1%;
             width: 100%;
             height: 7%;
             box-shadow: 10px 0 15px rgba(0, 0, 0, 0.5);
@@ -154,14 +154,19 @@
         }
 
         .footer {
-            height: 7%;
+            height: 6%;
             box-shadow: -10px 0 15px rgba(0, 0, 0, 0.3);
             background: #E0E0E0;
             text-align: center;
         }
 
-        .footer h3 {
-            padding-top: 15px;
+        .footer span {
+            vertical-align: bottom;
+        }
+
+        .footer a
+        {
+         margin-top:1% !important;   
         }
 
         .overlay {
@@ -175,6 +180,16 @@
             filter: blur(10px);
             position: fixed;
         }
+
+        .pull-left {
+            float: left;
+            margin-left: 15px !important;
+        }
+
+        .fix-search-bar {
+            width: 260px !important;
+            margin-left: -120px !important;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -185,6 +200,37 @@
         function modalTest() {
             $('.ui.basic.modal').modal('show');
         }
+
+        $('.ui.search')
+            .search({
+                source: content
+            });
+
+        var content = [{
+                title: 'Văn bản 1'
+            },
+            {
+                title: 'Văn bản 2'
+            },
+            {
+                title: 'Văn bản 3'
+            },
+            {
+                title: 'Văn bản 4'
+            },
+            {
+                title: 'Văn bản 5'
+            },
+            {
+                title: 'Văn bản 6'
+            },
+            {
+                title: 'Văn bản 7'
+            },
+            {
+                title: 'Văn bản 8'
+            }
+        ];
 
         function download() {
             $(".teal").addClass("loading");
@@ -206,10 +252,14 @@
 
 <body>
     <div class="container">
-        <div class="search">
-            <div class="ui icon input">
-                <input type="text" placeholder="Search...">
-                <i class="inverted circular search link icon"></i>
+        <div class="search-div">
+            <div class="ui search">
+                <button class="ui labeled icon positive button pull-left"><i class="Upload icon"></i> Tải lên </button>
+                <div class="ui icon input  fix-search-bar">
+                    <input class="prompt" type="text" placeholder="Tìm tài liệu...">
+                    <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
             </div>
         </div>
 
@@ -387,9 +437,9 @@
             </div>
         </div>
         <div class="footer">
-            <h3>Designed and hardcode by
-                <div class="ui red horizontal label" style="font-size:17px">Ngọc Trường</div>
-                , Wolfhub Solutions</h3>
+            <span style="font-size:18px;">Designed and hardcode by
+                <a class="ui blue image label"><img src="https://semantic-ui.com/images/avatar/small/christian.jpg"> Ngọc Trường <div class="detail">Wolfhub leader</div>
+                    </a></span>
         </div>
 
         <div class="ui basic modal">
